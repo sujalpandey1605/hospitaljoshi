@@ -6,7 +6,7 @@ const branchesData = [
         address: "Shop No 4/5, Shantaram Niwas, Ground Floor, Behind Waman Hari Pethe Jewellers, Dadar West",
         phone: "+91-77100 01102",
         mapsQuery: "Dr Joshi’s Clinic Dadar West Mumbai 400028",
-        img: "juhu.jpg"
+        img: "assets/images/juhu.jpg"
     },
     {
         id: "borivali",
@@ -15,7 +15,7 @@ const branchesData = [
         address: "Flat No. 102, 1st Floor, Sardar Aakanksha CHS, Opp. Bhagwati Hospital, Borivali (W)",
         phone: "+91-91361 14826",
         mapsQuery: "Dr Joshi Ayurvedic Clinic Borivali West",
-        img: "bandra.jpg"
+        img: "assets/images/bandra.jpg"
     },
     {
         id: "thane",
@@ -24,7 +24,7 @@ const branchesData = [
         address: "Shop No. 1, Royal Chambers, Ground Floor, Near Dagadi School, Charai, Thane (W)",
         phone: "+91-88984 84166",
         mapsQuery: "Dr Joshis Multispecialty Clinic Charai Thane West 400601",
-        img: "south_mumbai.jpg"
+        img: "assets/images/south_mumbai.jpg"
     },
     {
         id: "pune",
@@ -33,7 +33,7 @@ const branchesData = [
         address: "1st Floor, Plot No. 4, S. No. 46/1, B-2, Beside ICICI Bank, Pune-Satara Road",
         phone: "+91-78877 33444",
         mapsQuery: "Dr Joshi Holistic Clinic Pune Satara Road 411009",
-        img: "consultation.jpg"
+        img: "assets/images/consultation.jpg"
     },
     {
         id: "nashik",
@@ -42,7 +42,7 @@ const branchesData = [
         address: "Alankar Society, Shop No. 2, Near Govind Dande and Sons, Next Khare Typing",
         phone: "+91-84548 47184",
         mapsQuery: "Dr Joshis Holistic Multispeciality Clinic Nashik 422101",
-        img: "lobby.jpg"
+        img: "assets/images/lobby.jpg"
     }
 ];
 
@@ -54,7 +54,7 @@ const servicesData = [
         symptoms: ['Persistent fatigue, brain fog and low energy', 'Frequent indigestion, bloating and irregular bowel movements', 'Dull skin, hair fall and joint stiffness'],
         method: ['Detailed pulse, prakriti and vikriti assessment', 'Preparatory therapies (Snehana and Swedana)', 'Core Panchakarma procedures'],
         benefits: ['Deep cellular detoxification without side-effects', 'Improved digestion, sleep, immunity and skin clarity', 'Mental calmness, sharper focus and emotional balance'],
-        img: 'consultation.jpg'
+        img: 'assets/images/consultation.jpg'
     },
     {
         id: 'holistic',
@@ -63,7 +63,7 @@ const servicesData = [
         symptoms: ['Multiple unexplained complaints across systems', 'Recurrent infections and slow recovery', 'Hormonal swings, weight changes and low libido'],
         method: ['Whole-person consultation covering physical and lifestyle factors', 'Personalised herbal prescriptions', 'Yoga, pranayama and mindfulness coaching'],
         benefits: ['Sustainable improvement in energy, mood and resilience', 'Reduced dependence on symptomatic medication', 'Better digestion, hormonal balance and immunity'],
-        img: 'lobby.jpg'
+        img: 'assets/images/lobby.jpg'
     },
     {
         id: 'organic',
@@ -72,7 +72,7 @@ const servicesData = [
         symptoms: ['Inconsistent results from over-the-counter products', 'Side-effects or stomach upset', 'No improvement despite long-term self-medication'],
         method: ['Direct sourcing from trusted organic farms', 'Classical preparation techniques', 'Doctor-prescribed tailored dosage'],
         benefits: ['Higher potency with predictable results', 'Minimal to no side-effects', 'Complete traceability from herb to bottle'],
-        img: 'juhu.jpg'
+        img: 'assets/images/juhu.jpg'
     },
     {
         id: 'kidney',
@@ -81,7 +81,7 @@ const servicesData = [
         symptoms: ['Swelling around the eyes, ankles and feet', 'Foamy or blood-tinged urine', 'Rising creatinine and urea on blood reports'],
         method: ['Detailed nephro-Ayurvedic assessment', 'Customised herbal protocol using Punarnava, Gokshura', 'Strict dietary plan controlling protein and sodium'],
         benefits: ['Stabilised or improved creatinine and GFR', 'Reduced swelling, better appetite and energy levels', 'Lower frequency of dialysis sessions'],
-        img: 'experience.jpg'
+        img: 'assets/images/experience.jpg'
     },
     {
         id: 'cancer',
@@ -90,7 +90,7 @@ const servicesData = [
         symptoms: ['Unexplained weight loss and fatigue', 'Lumps, non-healing ulcers', 'Severe side-effects of ongoing chemo or radiation'],
         method: ['Stage-aware integrative plan with oncologist', 'Rasayana herbs to support immunity', 'Specific protocols for chemo-induced nausea'],
         benefits: ['Better tolerance of chemotherapy and radiation', 'Improved appetite, weight and haemoglobin', 'Reduced fatigue and faster recovery'],
-        img: 'bandra.jpg'
+        img: 'assets/images/bandra.jpg'
     },
     {
         id: 'brain',
@@ -99,7 +99,7 @@ const servicesData = [
         symptoms: ['Frequent headaches, migraine and dizziness', 'Tremors, stiffness, slowed movement', 'Memory lapses and persistent anxiety'],
         method: ['Shirodhara and Shiroabhyanga to calm the nervous system', 'Nasya therapy with medicated oils', 'Yoga, pranayama and meditation'],
         benefits: ['Reduced frequency and intensity of migraines', 'Better sleep, calmer mind and improved focus', 'Faster neurological recovery'],
-        img: 'south_mumbai.jpg'
+        img: 'assets/images/south_mumbai.jpg'
     },
     {
         id: 'diabetes',
@@ -108,7 +108,7 @@ const servicesData = [
         symptoms: ['Increased thirst, hunger and frequent urination', 'Unexplained weight loss or stubborn weight gain', 'Slow-healing wounds and recurrent infections'],
         method: ['Detailed metabolic and lifestyle assessment', 'Herbal support with Vijaysar, Gudmar, Karela', 'Structured low-glycaemic diet'],
         benefits: ['Better HbA1c and stable daily sugar readings', 'Reduced dependence on oral medication', 'Lower risk of neuropathy and kidney damage'],
-        img: 'consultation.jpg'
+        img: 'assets/images/consultation.jpg'
     },
     {
         id: 'infertility',
@@ -117,7 +117,7 @@ const servicesData = [
         symptoms: ['Inability to conceive after 12 months', 'Irregular or painful periods', 'Low sperm count, motility or morphology issues'],
         method: ['Couple consultation and review of reports', 'Uttar basti and other classical procedures', 'Rasayana and Vajikarana herbs for both partners'],
         benefits: ['Improved egg and sperm quality', 'Regular cycles and balanced hormones', 'Better implantation success in IVF cycles'],
-        img: 'lobby.jpg'
+        img: 'assets/images/lobby.jpg'
     },
     {
         id: 'arthritis',
@@ -126,7 +126,7 @@ const servicesData = [
         symptoms: ['Morning stiffness lasting more than 30 minutes', 'Swelling, warmth and tenderness in joints', 'Reduced range of movement and grip strength'],
         method: ['Internal medicines: Yogaraj Guggulu, Maharasnadi Kashayam', 'External therapies: Janu Basti, Patra Pinda Sweda', 'Structured physiotherapy and joint-friendly yoga'],
         benefits: ['Significant reduction in pain and stiffness', 'Improved joint flexibility and walking comfort', 'Lower dependence on long-term painkillers'],
-        img: 'juhu.jpg'
+        img: 'assets/images/juhu.jpg'
     },
     {
         id: 'spine',
@@ -135,7 +135,7 @@ const servicesData = [
         symptoms: ['Radiating pain down the leg or arm', 'Numbness or tingling in fingers or toes', 'Stiff neck or lower back, especially in the morning'],
         method: ['Kati Basti, Greeva Basti and Pizhichil for targeted relief', 'Sahacharadi and Mahanarayan oil-based abhyanga', 'Posture correction and core-strengthening yoga'],
         benefits: ['Strong, lasting pain relief without injections', 'Improved posture, flexibility and core strength', 'Avoided or postponed spine surgery in many cases'],
-        img: 'experience.jpg'
+        img: 'assets/images/experience.jpg'
     },
     {
         id: 'kidney_failure',
@@ -144,7 +144,7 @@ const servicesData = [
         symptoms: ['Marked swelling in legs, face and abdomen', 'Severe fatigue, breathlessness and itching', 'Steeply rising creatinine and falling GFR'],
         method: ['Comprehensive nephro-Ayurvedic evaluation', 'Tailored protocol with renoprotective herbs and minerals', 'Renal-friendly diet planning by experienced dietitians'],
         benefits: ['Stabilised or slowly improving creatinine', 'Reduced number of dialysis sessions in some cases', 'Better appetite, sleep and overall energy'],
-        img: 'bandra.jpg'
+        img: 'assets/images/bandra.jpg'
     },
     {
         id: 'hypertension',
@@ -153,7 +153,7 @@ const servicesData = [
         symptoms: ['Headaches, especially at the back of the head', 'Palpitations, breathlessness on exertion', 'Blurred vision and giddiness'],
         method: ['Detailed BP profiling and 7-day home monitoring', 'Sarpagandha, Jatamansi and Ashwagandha-based formulations', 'Pranayama and meditation taught one-to-one'],
         benefits: ['Smoother daily BP readings without spikes', 'Reduced medication dose in many patients', 'Lower risk of stroke, heart attack and kidney damage'],
-        img: 'south_mumbai.jpg'
+        img: 'assets/images/south_mumbai.jpg'
     }
 ];
 
