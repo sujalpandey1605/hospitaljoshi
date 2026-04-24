@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dr. Joshi's Ayurvedic Center | Redefining Wellness</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+              display: ["Poppins", "sans-serif"],
+              body: ["Poppins", "sans-serif"]
+            },
+            colors: {
+              "primary": "#2E3192",
+              "accent": "#8DC63F",
+              "bg-light": "#F8F9FA",
+              "joshi-dark": "#1A1A1A"
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body class="bg-white font-sans text-joshi-dark selection:bg-accent selection:text-white">
+    <!-- Premium Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center pointer-events-none">
+        <div class="w-20 h-20 mb-8 relative flex items-center justify-center">
+            <div class="absolute inset-0 border-4 border-primary/20 rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-accent rounded-full border-t-transparent animate-spin"></div>
+            <i class="fas fa-leaf text-2xl text-primary absolute"></i>
+        </div>
+        <div class="text-primary font-bold tracking-[0.2em] uppercase text-sm animate-pulse">Redefining Wellness</div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4 pointer-events-auto">
+        <a href="#" class="fab-btn w-14 h-14 bg-white text-primary rounded-full flex items-center justify-center shadow-2xl hover:bg-primary hover:text-white transition-all duration-300 border border-primary/10">
+            <i class="fas fa-comment-dots text-xl"></i>
+        </a>
+        <a href="#" class="fab-btn w-14 h-14 bg-joshi-dark text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-black transition-all duration-300 border border-white/10 delay-100">
+            <i class="fas fa-phone-alt text-xl"></i>
+        </a>
+        <a href="#" class="fab-whatsapp w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#1EBE5D] transition-all duration-300 delay-200">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <header class="fixed top-0 w-full z-50 bg-white/80 nav-blur shadow-[0px_20px_40px_rgba(46,49,146,0.04)] transition-all duration-500" data-purpose="main-navigation">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+            <div class="flex items-center space-x-12">
+                <a class="flex items-center space-x-3" href="#">
+                    <img src="logo.png" alt="Dr. Joshi's Logo" class="h-10 w-auto"/>
+                    <span class="text-primary text-2xl font-bold tracking-tighter uppercase">Dr. Joshi's</span>
+                </a>
+                <div class="hidden lg:flex space-x-10 text-[14px] font-medium tracking-wide uppercase">
+                    <a class="text-primary/70 hover:text-primary smooth-transition cursor-pointer" onclick="openAyurvedaTour()">Ayurveda</a>
+                    <div class="relative group cursor-pointer h-full py-1">
+                        <span class="text-primary/70 group-hover:text-primary smooth-transition flex items-center space-x-1">
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down text-[10px]"></i>
+                        </span>
+                        <div class="absolute top-full left-0 mt-2 w-80 bg-white shadow-2xl rounded-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition translate-y-4 group-hover:translate-y-0 transition-all duration-300 border border-primary/5">
+                            <div id="services-menu-container" class="max-h-[60vh] overflow-y-auto custom-scrollbar"></div>
+                        </div>
+                    </div>
+                    <div class="relative group cursor-pointer h-full py-1">
+                        <span class="text-primary/70 group-hover:text-primary smooth-transition flex items-center space-x-1">
+                            <span>Contact</span>
+                            <i class="fas fa-chevron-down text-[10px]"></i>
+                        </span>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white shadow-2xl rounded-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition translate-y-4 group-hover:translate-y-0 transition-all duration-300 border border-primary/5">
+                            <a href="#" class="block w-full text-left px-6 py-4 hover:bg-bg-light hover:text-accent transition-colors border-b border-primary/5 text-[12px] font-bold tracking-wide uppercase text-primary">Contact Us</a>
+                            <a href="#" class="block w-full text-left px-6 py-4 hover:bg-bg-light hover:text-accent transition-colors text-[12px] font-bold tracking-wide uppercase text-primary">Franchise Partner</a>
+                        </div>
+                    </div>
+                    <a class="text-primary/70 hover:text-primary smooth-transition" href="#">Our Story</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a class="hidden md:block text-[14px] font-semibold text-primary/70 hover:text-primary smooth-transition" href="#">Patient Portal</a>
+                <a class="bg-primary text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 active:scale-95 smooth-transition shadow-lg shadow-primary/20" href="#">
+                    Book Appointment
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-[88px]">
+        <section class="relative h-[85vh] min-h-[600px] flex items-center justify-start text-left overflow-hidden asymmetric-hero" data-purpose="hero">
+            <img alt="Ayurvedic Wellness Background" class="hero-parallax-bg absolute inset-0 w-full h-[120%] object-cover object-center brightness-75 scale-105" src="lobby.jpg"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-joshi-dark/80 via-primary/40 to-transparent"></div>
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-8">
+                <div class="max-w-3xl reveal-up delay-100">
+                    <h1 class="text-white text-6xl md:text-8xl font-bold mb-8 leading-[1.1] tracking-tight drop-shadow-2xl">
+                        Redefining the <br/><span class="text-accent relative inline-block">
+                            Ayurvedic
+                            <div class="absolute bottom-2 left-0 w-full h-3 bg-accent/30 -z-10 -rotate-2"></div>
+                        </span> experience
+                    </h1>
+                    <p class="text-lg md:text-xl text-white/90 mb-12 max-w-xl font-light leading-relaxed">
+                        Authentic holistic healing meets premium concierge service. World-class Ayurvedic practitioners dedicated to your wellbeing.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a class="bg-accent text-white px-12 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 active:scale-95 smooth-transition shadow-xl shadow-accent/30" href="#">
+                            Explore Treatments
+                        </a>
+                        <div class="flex items-center space-x-3 text-white/80 py-4">
+                            <div class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center">
+                                <i class="fas fa-play text-[10px]"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest">Our Methodology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-primary text-white py-4 text-center text-[10px] uppercase tracking-[0.3em] font-bold" data-purpose="announcement-bar">
+            Mumbai's Premier Holistic Center Now Open: Experience Custom Panchkarma Care
+        </div>
+
+        <section class="py-32 px-8 bg-white" data-purpose="trust-slider">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between opacity-40 grayscale hover:grayscale-0 smooth-transition">
+                <span class="text-2xl font-black uppercase tracking-tighter mb-8 md:mb-0">Forbes</span>
+                <span class="text-2xl font-serif italic font-bold mb-8 md:mb-0">Wellness Weekly</span>
+                <span class="text-2xl font-sans font-black mb-8 md:mb-0">AyurTimes</span>
+                <span class="text-2xl font-serif font-bold mb-8 md:mb-0">HealthLine India</span>
+            </div>
+        <section class="relative h-screen w-full overflow-hidden bg-joshi-dark" id="ai-video-section">
+            <!-- Background Video -->
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
+            >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-herbs-and-spices-on-the-table-40141-large.mp4" type="video/mp4">
+            </video>
+
+            <!-- Digital Grid/AI Overlay -->
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-joshi-dark via-transparent to-joshi-dark/80"></div>
+            
+            <!-- Scanning Line Effect -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-accent/30 shadow-[0_0_20px_rgba(141,198,63,0.5)] animate-[scan_4s_linear_infinite] z-20"></div>
+
+            <div class="relative z-10 h-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-center text-center">
+                <div class="reveal-up">
+                    <span class="inline-flex px-4 py-2 bg-accent/20 backdrop-blur border border-accent/30 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] text-accent mb-8">
+                        The Next Frontier in Healing
+                    </span>
+                    <h2 class="text-white text-5xl md:text-8xl font-bold mb-8 leading-tight tracking-tighter">
+                        AI Diagnostics <br/>
+                        <span class="text-accent italic font-serif">Meets Ancient Lore</span>
+                    </h2>
+                    <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+                        We leverage machine learning to analyze your unique Prakriti, bringing surgical precision to 5,000-year-old healing protocols.
+                    </p>
+                    
+                    <!-- AI Feature Badges -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
+                        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group">
+                            <div class="text-accent text-2xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-microchip"></i></div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-widest">Neural Pulse Analysis</h4>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group">
+                            <div class="text-accent text-2xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-dna"></i></div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-widest">Genomic Dosha Mapping</h4>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group">
+                            <div class="text-accent text-2xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-project-diagram"></i></div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-widest">Predictive Wellness AI</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scroll-expansion-wrapper" class="relative h-[250vh] bg-white">
+            <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+                <div id="expanding-content-box" class="w-[85vw] h-[80vh] rounded-[3rem] bg-bg-light relative overflow-hidden flex items-center justify-center shadow-2xl">
+                    <div class="max-w-7xl mx-auto px-8 w-full expand-inner-content mask-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                            <div>
+                                <h2 class="text-primary text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tighter">
+                                    Conscious care for <br/>the modern world.
+                                </h2>
+                                <div class="h-1 w-24 bg-accent mb-8"></div>
+                                <p class="text-lg text-joshi-dark/60 max-w-xl leading-relaxed mb-12">
+                                    We combine centuries of Ayurvedic wisdom with modern diagnostic precision to deliver unparalleled healthcare advocacy.
+                                </p>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                                        <img src="vikram.jpg" alt="Vikram Mehta" class="w-full h-full object-cover"/>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-primary text-xl">"The most profound healing I've experienced."</p>
+                                        <p class="text-sm text-joshi-dark/50">Vikram Mehta, Mumbai</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/3] group bg-joshi-dark">
+                                <video 
+                                    autoplay 
+                                    muted 
+                                    loop 
+                                    playsinline 
+                                    class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                                >
+                                    <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-consulting-a-patient-about-their-health-40142-large.mp4" type="video/mp4">
+                                </video>
+                                
+                                <!-- AI Pulse Overlay -->
+                                <div class="absolute inset-0 z-20 pointer-events-none">
+                                    <!-- Scanning Line -->
+                                    <div class="absolute top-0 left-0 w-full h-0.5 bg-accent shadow-[0_0_15px_rgba(141,198,63,0.8)] animate-[scan_3s_linear_infinite]"></div>
+                                    
+                                    <!-- Digital Data Points -->
+                                    <div class="absolute top-10 left-10 flex flex-col gap-2">
+                                        <div class="flex items-center gap-2 bg-black/40 backdrop-blur px-3 py-1 rounded-full border border-white/10">
+                                            <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
+                                            <span class="text-[8px] text-white font-bold tracking-widest uppercase">Vata: Stable</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-black/40 backdrop-blur px-3 py-1 rounded-full border border-white/10">
+                                            <div class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
+                                            <span class="text-[8px] text-white font-bold tracking-widest uppercase">Pitta: Elevated</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 bg-black/40 backdrop-blur px-3 py-1 rounded-full border border-white/10">
+                                            <div class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></div>
+                                            <span class="text-[8px] text-white font-bold tracking-widest uppercase">Kapha: Rebalancing</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Waveform -->
+                                    <div class="absolute bottom-10 right-10 w-32 h-16 opacity-50">
+                                        <div class="flex items-end gap-1 h-full">
+                                            <div class="w-1 bg-accent animate-[h-pulse_1.2s_ease-in-out_infinite] h-1/2"></div>
+                                            <div class="w-1 bg-accent animate-[h-pulse_1.5s_ease-in-out_infinite] h-3/4"></div>
+                                            <div class="w-1 bg-accent animate-[h-pulse_1s_ease-in-out_infinite] h-1/2"></div>
+                                            <div class="w-1 bg-accent animate-[h-pulse_1.8s_ease-in-out_infinite] h-full"></div>
+                                            <div class="w-1 bg-accent animate-[h-pulse_1.3s_ease-in-out_infinite] h-2/3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent p-8 flex flex-col justify-end z-30">
+                                    <p class="text-white text-xl font-bold">Neural Nadi Pariksha</p>
+                                    <p class="text-white/80 text-sm italic">AI-Enhanced Pulse Analysis in Real-Time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-8 bg-joshi-dark text-white relative overflow-hidden" id="enhanced-focus-section">
+            <div class="absolute top-0 left-0 w-[40rem] h-[40rem] bg-primary/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-[40rem] h-[40rem] bg-accent/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-20 reveal-fade">
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Our Core Focus Areas</h2>
+                    <div class="h-1 w-24 bg-accent mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <!-- Card 1 -->
+                    <div class="group relative bg-white/5 border border-white/10 rounded-[2.5rem] p-10 overflow-hidden hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer shadow-2xl flex flex-col justify-between reveal-up delay-100">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm border border-white/5 transform group-hover:-rotate-6 group-hover:scale-110 transition-all duration-500">
+                                <i class="fas fa-leaf text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Organic Medicine</h3>
+                            <p class="text-white/60 text-base leading-relaxed group-hover:text-white/80 transition-colors">Every formulation is prepared in-house from carefully sourced organic herbs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="group relative bg-white/5 border border-white/10 rounded-[2.5rem] p-10 overflow-hidden hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer shadow-2xl flex flex-col justify-between reveal-up delay-200">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm border border-white/5 transform group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
+                                <i class="fas fa-spa text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Ayurvedic Panchkarma</h3>
+                            <p class="text-white/60 text-base leading-relaxed group-hover:text-white/80 transition-colors">A structured purification process to eliminate toxins and restore healing.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="group relative bg-white/5 border border-white/10 rounded-[2.5rem] p-10 overflow-hidden hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer shadow-2xl flex flex-col justify-between reveal-up delay-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm border border-white/5 transform group-hover:-rotate-6 group-hover:scale-110 transition-all duration-500">
+                                <i class="fas fa-seedling text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Infertility Treatment</h3>
+                            <p class="text-white/60 text-base leading-relaxed group-hover:text-white/80 transition-colors">Our couple-centric program balances hormones for natural conception.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Banner -->
+                <div class="group relative bg-black border border-white/10 rounded-[2.5rem] overflow-hidden hover:-translate-y-2 transition-all duration-500 cursor-pointer min-h-[400px] shadow-2xl w-full flex reveal-zoom delay-400">
+                    <img src="consultation.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 group-hover:opacity-50 transition-all duration-700 mix-blend-luminosity">
+                    <div class="absolute inset-0 bg-gradient-to-t from-joshi-dark via-joshi-dark/50 to-transparent pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent pointer-events-none"></div>
+                    
+                    <div class="relative z-10 p-12 md:p-16 flex flex-col md:flex-row w-full items-start md:items-center justify-between">
+                        <div class="max-w-2xl">
+                            <span class="inline-flex px-4 py-2 bg-accent/20 backdrop-blur border border-accent/30 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-6 shadow-xl relative overflow-hidden">
+                                <span class="relative z-10">Live Interview</span>
+                                <div class="absolute inset-0 bg-accent/20 animate-pulse"></div>
+                            </span>
+                            <h3 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4 drop-shadow-xl">Featured On A Leading <br class="hidden md:block"/> News Channel</h3>
+                            <p class="text-white/70 text-lg md:text-xl">Watch Dr. Joshi discuss the future of integrated Ayurvedic medicine, holistic wellness, and transformative patient care.</p>
+                        </div>
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-accent/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(200,169,110,0.4)] group-hover:shadow-[0_0_60px_rgba(200,169,110,0.6)] group-hover:scale-110 transition-all duration-500 mt-12 md:mt-0 shrink-0 relative">
+                            <div class="absolute inset-0 rounded-full border-2 border-accent animate-ping opacity-20 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <i class="fas fa-play text-white text-3xl md:text-4xl ml-2 drop-shadow-md"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-8 bg-bg-light" id="home-services-section">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20 reveal-up">
+                    <h2 class="text-primary text-5xl font-bold mb-6 tracking-tight">Our Healing Modalities</h2>
+                    <p class="text-joshi-dark/60 max-w-2xl mx-auto text-lg leading-relaxed">Explore our comprehensive range of authentic Ayurvedic treatments, individually tailored to restore your natural balance and vitality.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="home-services-grid">
+                    <!-- Dynamically populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 bg-white px-8" data-purpose="locations-grid">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal-fade">
+                    <div class="max-w-xl">
+                        <h2 class="text-primary text-5xl font-bold mb-6 tracking-tight">Our Centers</h2>
+                        <p class="text-joshi-dark/60">Find sanctuary in our world-class facilities across Mumbai and beyond.</p>
+                    </div>
+                    <a class="mt-8 md:mt-0 text-primary font-bold uppercase text-xs tracking-widest border-b-2 border-accent pb-2 hover:text-accent smooth-transition" href="#">View All Locations</a>
+                </div>
+                <div class="relative overflow-hidden w-full max-w-lg mx-auto pb-12 reveal-zoom delay-200">
+                    <div id="centers-carousel" class="flex transition-transform duration-1000 ease-in-out w-full">
+                        <!-- Dynamically populated by JS -->
+                    </div>
+                    <!-- Dots -->
+                    <div class="absolute bottom-0 left-0 right-0 flex justify-center gap-3" id="centers-dots">
+                        <!-- Dynamically populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-8 bg-bg-light" id="contact-franchise-section">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Us -->
+                <div class="bg-white rounded-[2.5rem] p-12 md:p-16 shadow-xl border border-primary/5 relative overflow-hidden group reveal-up delay-100">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-[50px] group-hover:bg-primary/10 transition-colors duration-700"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                            <i class="fas fa-headset text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4 tracking-tight">Contact Us</h3>
+                        <p class="text-joshi-dark/60 mb-10 text-lg leading-relaxed">Ready to begin your healing journey? Our care coordinators are here to help you schedule a consultation.</p>
+                        <div class="space-y-8 mb-12">
+                            <div class="flex items-center gap-6 text-joshi-dark/80 group/item cursor-pointer">
+                                <div class="w-14 h-14 rounded-full bg-bg-light flex items-center justify-center shrink-0 group-hover/item:bg-accent group-hover/item:text-white transition-colors duration-300">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-widest font-bold text-primary/50 mb-1">Call Us Directly</p>
+                                    <p class="font-bold text-xl group-hover/item:text-accent transition-colors">+91 98765 43210</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 text-joshi-dark/80 group/item cursor-pointer">
+                                <div class="w-14 h-14 rounded-full bg-bg-light flex items-center justify-center shrink-0 group-hover/item:bg-accent group-hover/item:text-white transition-colors duration-300">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase tracking-widest font-bold text-primary/50 mb-1">Email Support</p>
+                                    <p class="font-bold text-xl group-hover/item:text-accent transition-colors">care@drjoshis.in</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-block bg-primary text-white px-8 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl w-full text-center">Get In Touch Now</a>
+                    </div>
+                </div>
+
+                <!-- Franchise -->
+                <div class="bg-joshi-dark rounded-[2.5rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group reveal-up delay-300">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[60px] group-hover:bg-accent/30 transition-colors duration-700"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm border border-white/5">
+                            <i class="fas fa-handshake text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">Partner With Us</h3>
+                        <p class="text-white/70 mb-10 text-lg leading-relaxed">Join our mission to bring authentic, high-end Ayurvedic care to the world. Explore lucrative franchise opportunities.</p>
+                        <ul class="space-y-6 mb-12 flex-1">
+                            <li class="flex items-center gap-4 text-white/90">
+                                <i class="fas fa-check-circle text-accent text-xl"></i>
+                                <span class="font-medium text-lg">Proven premium business model</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-white/90">
+                                <i class="fas fa-check-circle text-accent text-xl"></i>
+                                <span class="font-medium text-lg">Complete operational & medical training</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-white/90">
+                                <i class="fas fa-check-circle text-accent text-xl"></i>
+                                <span class="font-medium text-lg">Direct access to in-house organic medicine</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-block bg-accent text-white px-8 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-joshi-dark transition-all shadow-lg shadow-accent/20 w-full text-center mt-auto">Apply For Franchise</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-40 bg-primary text-white text-center px-8 relative overflow-hidden reveal-zoom" data-purpose="footer-cta">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-[100px]"></div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h2 class="text-5xl md:text-8xl font-bold mb-10 leading-tight tracking-tighter">
+                    Your journey to <br/><span class="text-accent">vitality</span> begins now.
+                </h2>
+                <a class="inline-block bg-white text-primary px-16 py-6 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-white smooth-transition shadow-2xl" href="#">
+                    Schedule Consultation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white pt-32 pb-12 px-12 border-t border-primary/5" data-purpose="main-footer">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                <div class="md:col-span-1">
+                    <h3 class="text-primary text-2xl font-bold uppercase mb-8">Dr. Joshi's</h3>
+                    <p class="text-sm text-joshi-dark/50 leading-relaxed mb-8">
+                        The ultimate destination for authentic Ayurvedic healing and premium medical advocacy.
+                    </p>
+                    <a class="border border-primary text-primary px-8 py-3 rounded-full text-xs font-bold uppercase hover:bg-primary hover:text-white smooth-transition" href="#">
+                        Contact Us
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary mb-8">Treatments</h4>
+                    <ul class="space-y-4 text-sm text-joshi-dark/60">
+                        <li><a class="hover:text-accent" href="#">Panchkarma</a></li>
+                        <li><a class="hover:text-accent" href="#">Detox Programs</a></li>
+                        <li><a class="hover:text-accent" href="#">Nutritional Consultation</a></li>
+                        <li><a class="hover:text-accent" href="#">Stress Management</a></li>
+                    </ul>
+                    <img src="badge.png" alt="Certified Ayurvedic Center" class="mt-10 h-24 w-auto opacity-80 grayscale hover:grayscale-0 smooth-transition"/>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary mb-8">Center</h4>
+                    <ul class="space-y-4 text-sm text-joshi-dark/60">
+                        <li><a class="hover:text-accent" href="#">Our Doctors</a></li>
+                        <li><a class="hover:text-accent" href="#">Wellness Team</a></li>
+                        <li><a class="hover:text-accent" href="#">Research</a></li>
+                        <li><a class="hover:text-accent" href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary mb-8">Locations</h4>
+                    <ul class="space-y-4 text-sm text-joshi-dark/60">
+                        <li><a class="hover:text-accent" href="#">Juhu, Mumbai</a></li>
+                        <li><a class="hover:text-accent" href="#">Bandra West</a></li>
+                        <li><a class="hover:text-accent" href="#">South Mumbai</a></li>
+                        <li><a class="hover:text-accent" href="#">International Consults</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-primary/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-primary/40">
+                <p>&copy; 2026 Dr. Joshi's Ayurvedic Center. All Rights Reserved.</p>
+                <div class="flex space-x-8 mt-6 md:mt-0">
+                    <a class="hover:text-primary" href="#">Privacy</a>
+                    <a class="hover:text-primary" href="#">Terms</a>
+                    <a class="hover:text-primary" href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 bg-white md:hidden h-20 z-50 shadow-2xl border-t border-primary/5" data-purpose="bottom-nav">
+        <a class="flex flex-col items-center justify-center text-primary/60 hover:text-primary" href="#">
+            <span class="text-[9px] uppercase tracking-widest font-bold">Centers</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary/60 hover:text-primary" href="#">
+            <span class="text-[9px] uppercase tracking-widest font-bold">Menu</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-accent rounded-full px-6 py-3 text-white font-bold shadow-lg shadow-accent/20" href="#">
+            <span class="text-[9px] uppercase tracking-widest">Book Now</span>
+        </a>
+    </div>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+    <!-- Ayurveda Tour Modal -->
+    <div id="ayurvedaTourModal" class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 opacity-0 pointer-events-none transition-opacity duration-500">
+        <button onclick="closeAyurvedaTour()" class="absolute top-8 right-8 z-[110] p-4 bg-primary/5 hover:bg-primary/10 rounded-full transition-colors cursor-pointer">
+            <i class="fas fa-times text-2xl text-primary"></i>
+        </button>
+
+        <!-- Loader -->
+        <div id="tourLoader" class="flex flex-col items-center justify-center text-primary transition-opacity duration-500 absolute inset-0">
+            <i class="fas fa-circle-notch fa-spin text-6xl mb-6"></i>
+            <h2 class="text-3xl font-bold tracking-widest uppercase animate-pulse">Discovering Ayurveda...</h2>
+        </div>
+
+        <!-- Content -->
+        <div id="tourContent" class="w-full max-w-6xl bg-white border border-primary/10 shadow-2xl rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row h-[80vh] opacity-0 translate-y-8 transition-all duration-700">
+            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center bg-bg-light relative">
+                <div class="text-xs font-bold tracking-widest text-accent uppercase mb-4" id="tourStepIndicator">Step 1 of 3</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6" id="tourTitle">Title</h2>
+                <p class="text-joshi-dark/70 text-lg leading-relaxed mb-8" id="tourIntro">Intro</p>
+                
+                <div class="bg-white border border-primary/5 rounded-2xl p-6 shadow-sm mb-6">
+                    <h4 class="text-lg font-bold text-primary mb-4">Key Benefits</h4>
+                    <ul id="tourBenefits" class="space-y-3"></ul>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 relative bg-joshi-dark flex flex-col">
+                <img id="tourImage" src="" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-opacity duration-500"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-center z-10">
+                    <button onclick="prevTourStep()" id="tourPrevBtn" class="p-4 bg-white/20 backdrop-blur hover:bg-white/30 rounded-full text-white transition disabled:opacity-30 cursor-pointer">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div id="tourDots" class="flex gap-2"></div>
+                    <button onclick="nextTourStep()" id="tourNextBtn" class="p-4 bg-accent hover:bg-accent/90 rounded-full text-white shadow-lg transition disabled:opacity-30 cursor-pointer">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Preview Modal -->
+    <div id="servicePreviewModal" class="fixed inset-0 z-[110] bg-black/60 backdrop-blur-md flex items-center justify-center p-4 md:p-8 opacity-0 pointer-events-none transition-opacity duration-500" onclick="closeServicePreview()">
+        <div id="servicePreviewContent" onclick="event.stopPropagation()" class="relative w-full max-w-5xl bg-white border border-primary/10 shadow-2xl rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row max-h-[90vh] translate-y-12 transition-all duration-500">
+            <button onclick="closeServicePreview()" class="absolute top-6 right-6 z-20 p-4 bg-black/30 backdrop-blur-sm hover:bg-black/50 text-white rounded-full transition-colors cursor-pointer">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden">
+                <img id="previewImage" src="" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-8">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 backdrop-blur-md text-accent text-xs font-bold tracking-widest uppercase mb-3 border border-accent/30">
+                            Detailed Overview
+                        </div>
+                        <h2 id="previewTitle" class="text-3xl md:text-4xl font-bold text-white leading-tight drop-shadow-md"></h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-3/5 p-10 overflow-y-auto flex flex-col bg-bg-light">
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-primary mb-4">About This Treatment</h3>
+                    <p id="previewIntro" class="text-joshi-dark/70 text-lg leading-relaxed"></p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 flex-1">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5">
+                        <h3 class="text-md font-bold text-primary mb-4 flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-red-400"></div> Key Symptoms
+                        </h3>
+                        <ul id="previewSymptoms" class="space-y-3"></ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5">
+                        <h3 class="text-md font-bold text-primary mb-4 flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-accent"></div> Our Method
+                        </h3>
+                        <ul id="previewMethod" class="space-y-3"></ul>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-auto pt-6 border-t border-primary/10">
+                    <a href="#" class="flex-1 bg-primary text-white text-center px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg">
+                        Read Full Details
+                    </a>
+                    <a href="#" class="flex-1 bg-white text-primary text-center px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest border border-primary hover:bg-bg-light transition">
+                        Book Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
